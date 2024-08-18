@@ -22,10 +22,10 @@ function generatePassword(){
 
 passwordlength = parseInt(prompt('Choose a password between 8 and 128 characters'))
 
-includeUpperCase = confirm('Please add all of them')
-includelowerCase = confirm('Please add small letters')
-includeNumber = confirm('Enter the number?')
-includeSpecialCharacter = confirm('Add special words?')
+includeUpperCase = confirm("upper")
+includelowerCase = confirm("lower")
+includeNumber = confirm("numbers")
+includeSpecialCharacter = confirm("special")
 
 while(isNaN(passwordlength) || passwordlength< 8 || passwordlength >128) {
     alert('I have to add these little ones form 8 to 128');
@@ -41,22 +41,22 @@ return"";
 }
 let availableChar ="";
 if(includeUpperCase) {
-    availableChar += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    availableChar += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 }
 if (includelowerCase) {
-    availableChar += 'abcdefghijklmnopqrstuvwxyz';
+    availableChar += "abcdefghijklmnopqrstuvwxyz";
 }
 if (includeNumber) {
-    availableChar += '123456789';
+    availableChar += "123456789";
 }
 if (includeSpecialCharacter) {
-    availableChar += '!@#$%^&';
+    availableChar += "!@#$%^&";
 }
 
 let password ="";
 for (let i =0 ; i < passwordlength; i++) {
-    let randomIndex = Math.floor(Math.random()* availableChar.length);
-    password += +availableChar.charAt (randomIndex);
+    let randomIndex = Math.floor(Math.random() * availableChar.length);
+    password += availableChar.charAt (randomIndex);
 }
 return password;
 }
